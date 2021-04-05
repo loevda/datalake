@@ -1,5 +1,7 @@
 # DATA LAKE with Spark
 ***
+ETL pipeline for a data lake hosted on S3 that extracts data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables.  
+***
 ### How to run the Project
 Create <b><i>dl.cfg</i></b> file into the project root path wih the following values:
 
