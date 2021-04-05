@@ -39,10 +39,7 @@ def process_song_data(spark, input_data, output_data):
     """
 
     # get filepath to song data file
-    #song_data = os.path.join(input_data, 'song_data/*/*/*/*.json')
-
-    song_data = \
-        ('/home/david2099/Documents/data_engineers/P4/song-data/song_data/*/*/*/*.json')
+    song_data = os.path.join(input_data, 'song_data/*/*/*/*.json')
 
     # read song data file
     df = spark.read.json(song_data)
@@ -93,15 +90,9 @@ def process_log_data(spark, input_data, output_data):
     """
 
     # get filepath to log data file
-    # log_data = os.path.join(input_data, 'log_data/*/*/*.json')
+    log_data = os.path.join(input_data, 'log_data/*/*/*.json')
     # # song data needed for join
-    # song_data = os.path.join(input_data, 'song_data/*/*/*/*.json')
-
-    log_data = \
-        ('/home/david2099/Documents/data_engineers/P4/log-data/*.json')
-
-    song_data = \
-        ('/home/david2099/Documents/data_engineers/P4/song-data/song_data/*/*/*/*.json')
+    song_data = os.path.join(input_data, 'song_data/*/*/*/*.json')
 
     # read log data file
     df = spark.read.json(log_data)
@@ -182,7 +173,6 @@ def process_log_data(spark, input_data, output_data):
 
 
 def main():
-    # with active_session():
     spark = create_spark_session()
     input_data = "s3a://udacity-dend/"
     output_data = config['AWS']['AWS_S3_OUTPUT_BUCKET']
