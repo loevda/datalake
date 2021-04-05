@@ -20,10 +20,19 @@ def create_spark_session():
     spark = SparkSession \
         .builder \
         .appName("Data Lake with Spark") \
-        .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:3.2.0") \
-        .config("spark.hadoop.fs.s3a.multipart.size", "104857600") \
+        .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:2.7.0") \
         .getOrCreate()
     return spark
+
+#TODO: uncomment below for python 3.8
+# def create_spark_session():
+#     spark = SparkSession \
+#         .builder \
+#         .appName("Data Lake with Spark") \
+#         .config("spark.jars.packages", "org.apache.hadoop:hadoop-aws:3.2.0") \
+#         .config("spark.hadoop.fs.s3a.multipart.size", "104857600") \
+#         .getOrCreate()
+#     return spark
 
 
 
